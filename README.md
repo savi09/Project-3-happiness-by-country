@@ -8,3 +8,15 @@ CSS- styling (web visualization challenge belly button
 
 JavaScript- may include plotly, leaflet, geomap
 
+Visualizations:
+Bar Chart for Suicide compared to Happiness (Maybe)
+Gauge :
+
+Layers: 
+2015 vrs 2016
+
+Drop Down Menu:
+By Rank see Panel of data
+
+Legend:
+

@@ -11,8 +11,58 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Belly Button Biodiversity Dashboard</h1>
+          <p>Use the interactive charts below to explore the dataset</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Test Subject ID No.:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Demographic Info</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="bar"></div>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bubble"></div>
+        </div>
+      </div>
+    </div>
     <h1>Hello, world!</h1>
+    <div class="container text-center">
+      <h1 class="jumbotron">Happiness</h1>
+      <div>
+        <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+          {% for item in happy_list %}
+          <div class="col-lg-4">
+              <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ item.year }}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.happiness_rank }}</h6>
+                    <p class="card-text">Potential Revenue: {{ (item.Family)}}</p>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
 
+      </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
