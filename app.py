@@ -11,7 +11,6 @@ client = pymongo.MongoClient(conn)
 # connect to mongo db and collection
 db = client.happy_db
 happy = db.happy
-
 # ss_db = db.suicide
 
 
