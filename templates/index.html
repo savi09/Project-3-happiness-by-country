@@ -49,13 +49,13 @@
       <h1 class="jumbotron">Happiness</h1>
       <div>
         <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
-          {% for item in happy_list %}
+          {% for item in data %}
           <div class="col-lg-4">
               <div class="card" style="width: 20rem;">
                   <div class="card-body">
                     <h4 class="card-title">{{ item.year }}</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.happiness_rank }}</h6>
-                    <p class="card-text">Potential Revenue: {{ (item.Family)}}</p>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.happiness_rank }}</h6> -->
+                    <!-- <p class="card-text">Potential Revenue: {{ (item.Family)}}</p> -->
                   </div>
                 </div>
             </div>
