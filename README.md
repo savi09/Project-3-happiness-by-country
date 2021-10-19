@@ -10,6 +10,10 @@ JavaScript- may include plotly, leaflet, geomap
 
 Visualizations:
 Bar Chart or scatter for Suicide compared to Happiness to see if they are correlated (Maybe)
+Choropleth:
+https://codepen.io/pen/?editors=1111
+https://plotly.com/javascript/choropleth-maps/
+
 Button operating a happiness rank with 10 at a time.
 Gauge:
 Maps to be in a dark mode
