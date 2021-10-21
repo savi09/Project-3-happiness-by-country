@@ -25,3 +25,15 @@ body {
     margin-right: 8px;
     opacity: 0.7;
   }
+
+  /* Title Animnation  */
+  .ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  /* END - Title Animnation  */
