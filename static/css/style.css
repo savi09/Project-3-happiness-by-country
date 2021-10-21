@@ -3,6 +3,18 @@ body {
     padding: 0;
     margin: 0;
   }
+
+  /* Adding Scroll Bar */
+  #ufo-table {
+    min-height: 70px;
+    padding: 5px;
+    margin: 70px;
+    display: block;
+    overflow: scroll;
+    white-space: nowrap;
+    max-width: 100%;
+    max-height: 596px;
+  }
   
   /* Set map, body, and html to 100% of the screen size. */
   #map,
