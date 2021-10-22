@@ -140,7 +140,7 @@ function optionChanged(yr_choice) {
                 title: 'Suicides per 100K'}
         };
         
-        Plotly.newPlot('bubble', traceDataBub, bubbleLayout);
+        Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
 
 
         
@@ -219,12 +219,12 @@ function optionChanged(yr_choice) {
                         autotic: false,
                         tickprefix: '',
                         title: 'Happiness<br>Score'
-                    },
-                    // autocolorscale: true
+                    }
                 }];
 
                 var layout = {
                     title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
+                    autosize: true,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
@@ -232,11 +232,9 @@ function optionChanged(yr_choice) {
                             type: 'mercator'
                             // type: 'robinson'
                         }
-                    },
-                    width: 870,
-                    height: 1000
+                    }
                 };
-                Plotly.newPlot("myDiv", data, layout, { showLink: false });
+                Plotly.newPlot("myDiv", data, layout, { showLink: false }, {responsive: true});
 
     
                 rows.forEach((row_data) => {
@@ -317,12 +315,12 @@ function optionChanged(yr_choice) {
                         autotic: false,
                         tickprefix: '',
                         title: 'Happiness<br>Score'
-                    },
-                    // autocolorscale: true
+                    }
                 }];
 
                 var layout = {
                     title: '2016 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
+                    autosize: true,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
@@ -330,11 +328,10 @@ function optionChanged(yr_choice) {
                             type: 'mercator'
                             // type: 'robinson'
                         }
-                    },
-                    width: 870,
-                    height: 1000
+                    }
+
                 };
-                Plotly.newPlot("myDiv", data, layout, { showLink: false });
+                Plotly.newPlot("myDiv", data, layout, { showLink: false }, {responsive: true});
 
 
                 rows.forEach((row_data) => {
@@ -475,8 +472,10 @@ function initCharts() {
             yaxis: {
                 title: 'Suicides per 100K'}
         };
+
+        var config = {responsive: true}
         
-        Plotly.newPlot('bubble', traceDataBub, bubbleLayout);
+        Plotly.newPlot('bubble', traceDataBub, bubbleLayout, { showLink: false });
 
         ///// END - Initial Bubble Chart ////////
 
@@ -522,8 +521,8 @@ function initCharts() {
                 // [0.5, 'rgb(111, 66, 193)'], [0.6, 'rgb(90, 120, 245)'],
                 // [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
             autocolorscale: false,
-            reversescale: true,
-            marker: {
+            reversescale: true
+            ,marker: {
                 line: {
                     color: 'rgb(180,180,180)',
                     width: 0.5
@@ -536,12 +535,12 @@ function initCharts() {
                 autotic: false,
                 tickprefix: '',
                 title: 'Happiness<br>Score'
-            },
-            // autocolorscale: true
+            }
         }];
 
         var layout = {
             title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"> </a>',
+            autosize: true,
             geo: {
                 showframe: false,
                 showcoastlines: false,
@@ -549,11 +548,9 @@ function initCharts() {
                     type: 'mercator'
                     // type: 'robinson'
                 }
-            },
-            width: 870,
-            height: 1000
+            }
         };
-        Plotly.newPlot("myDiv", data, layout, { showLink: false });
+        Plotly.newPlot("myDiv", data, layout, {showLink: false}, {responsive: true});
 
 
         rows.forEach((row_data) => {

@@ -4,9 +4,23 @@ body {
   margin: 0;
 }
 
+.bubble {
+  padding: 5px;
+  background-color: rgb(96, 165, 177);
+}
+
+.title {
+  padding: 10px;
+}
+
+.dropDown {
+  padding: 10px;
+}
+
 /* Adding Scroll Bar */
 #ufo-table {
   min-height: 70px;
+  min-width: 395px;
   padding: 5px;
   margin: 70px;
   display: block;
@@ -17,10 +31,11 @@ body {
 }
 
 /* Set map, body, and html to 100% of the screen size. */
-#map,
+#myDiv,
 body,
 html {
   height: 100%;
+  width: 100%;
 }
 
 .legend {
@@ -42,6 +57,7 @@ html {
 .ml2 {
   font-weight: 900;
   font-size: 3.5em;
+  color: #5476A9;
 }
 
 .ml2 .letter {
