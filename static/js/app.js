@@ -119,7 +119,9 @@ function drawType(yr_choice) {
             mode: 'markers',
             marker: {
                 color: happy_,
-                colorscale: 'Bluered',
+                // colorscale: 'Bluered',
+                colorscale: 'Portland',
+                reversescale: true,
             size: ssSize 
             }
         };
@@ -200,10 +202,12 @@ function optionChanged(selOption) {
                 locations: unpack(rows, 'code'),
                 z: unpack(rows, 'score'),
                 text: unpack(rows, 'country'),
-                colorscale: [
-                    [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
-                    [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
-                    [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
+                // colorscale: 'Bluered',
+                colorscale: 'Portland',
+                // [
+                //     [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
+                //     [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
+                //     [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
                 autocolorscale: false,
                 reversescale: true,
                 marker: {
@@ -296,10 +300,12 @@ if (selOption == "happy2016") {
         locations: unpack(rows, 'code'),
         z: unpack(rows, 'score'),
         text: unpack(rows, 'country'),
-        colorscale: [
-            [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
-            [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
-            [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
+        // colorscale: 'Bluered',
+        colorscale: 'Portland',
+        // [
+        //     [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
+        //     [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
+        //     [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
         autocolorscale: false,
         reversescale: true,
         marker: {
@@ -454,7 +460,9 @@ function initCharts() {
             mode: 'markers',
             marker: {
                 color: happy_,
-                colorscale: 'Bluered',
+                // colorscale: 'Bluered',
+                colorscale: 'Portland',
+                reversescale: true,
             size: ssSize 
             }
         };
@@ -508,10 +516,11 @@ function initCharts() {
             locations: unpack(rows, 'code'),
             z: unpack(rows, 'score'),
             text: unpack(rows, 'country'),
-            colorscale: [
-                [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
-                [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
-                [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
+            // colorscale: 'Bluered',
+            colorscale: 'Portland',
+                // [0, 'rgb(13, 110, 253)'], [0.35, 'rgb(102, 16, 242)'],
+                // [0.5, 'rgb(111, 66, 193)'], [0.6, 'rgb(90, 120, 245)'],
+                // [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
             autocolorscale: false,
             reversescale: true,
             marker: {
@@ -532,7 +541,7 @@ function initCharts() {
         }];
 
         var layout = {
-            title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
+            title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"> </a>',
             geo: {
                 showframe: false,
                 showcoastlines: false,
