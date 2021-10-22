@@ -167,11 +167,11 @@ function optionChanged(yr_choice) {
         //**************************Creating forloop**************************///
         //************************************************************************//
 
-        for (var i = 0; i < happy_results.length; i++) {
-        var h_score = happy_results[i].happiness_score;
-        //var rank = happy_results[i].happiness_rank;
-        var h_Region = happy_results[i].Region;
-        var l_expec = happy_results[i].life_expectancy;
+        for (var barI = 0; barI < happy_results.length; barI++) {
+        var h_score = happy_results[barI].happiness_score;
+        //var rank = happy_results[barI].happiness_rank;
+        var h_Region = happy_results[barI].Region;
+        var l_expec = happy_results[barI].life_expectancy;
     
         sh_score.push(h_score);
         Region.push(h_Region);
@@ -206,81 +206,63 @@ function optionChanged(yr_choice) {
             ],
         },
         ];
-        barlayout = {
-        title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
-        xaxis: { title: "Region", automargin: true },
-        yaxis: { title: "Happiness_Score", range: [0, 22] },
-        height: 600,
-        width: 900,
-        updatemenus: [
-            {
-            x: 0.85,
-            y: 1.15,
-            xref: "paper",
-            yref: "paper",
-            yanchor: "top",
-            active: 0,
-            showactive: false,
-            buttons: [
+        var barlayout = {
+            title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
+            xaxis: { title: "Region", automargin: true },
+            yaxis: { title: "Happiness_Score", range: [0, 22] },
+            height: 600,
+            width: 900,
+            updatemenus: [
                 {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "avg"],
-                label: "Avg",
-                },
-            //   {
-            //     method: "restyle",
-            //     args: ["transforms[0].aggregations[0].func", "sum"],
-            //     label: "Sum",
-            //   },
-                {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "min"],
-                label: "Min",
-                },
-                {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "max"],
-                label: "Max",
-                },
-                {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "mode"],
-                label: "Mode",
-                },
-                {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "median"],
-                label: "Median",
-                },
-                // {
-                //   method: "restyle",
-                //   args: ["transforms[0].aggregations[0].func", "count"],
-                //   label: "Count",
-                // },
-                {
-                method: "restyle",
-                args: ["transforms[0].aggregations[0].func", "stddev"],
-                label: "Std.Dev",
-                },
-            //   {
-            //     method: "restyle",
-            //     args: ["transforms[0].aggregations[0].func", "first"],
-            //     label: "First",
-            //   },
-            //   {
-            //     method: "restyle",
-            //     args: ["transforms[0].aggregations[0].func", "last"],
-            //     label: "Last",
-            //   },
-            ],
-            },
-        ],
+                x: 0.85,
+                y: 1.15,
+                xref: "paper",
+                yref: "paper",
+                yanchor: "top",
+                active: 0,
+                showactive: false,
+                buttons: [
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "avg"],
+                    label: "Avg",
+                    },
+
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "min"],
+                    label: "Min",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "max"],
+                    label: "Max",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "mode"],
+                    label: "Mode",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "median"],
+                    label: "Median",
+                    },
+
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "stddev"],
+                    label: "Std.Dev",
+                    },
+                ]
+                }
+            ]
         };
     
     
         //var data = [t1,t2];
         //Plotly.newPlot('myDiv', data, layout)
-        Plotly.newPlot("myagg", bar_data, barlayout);
+        Plotly.newPlot("myagg", bar_data, barlayout, {responsive: true});
     // });
 
 

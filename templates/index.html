@@ -32,10 +32,10 @@
             </div>
         </div>
             <!-- END - Title -->
-      
+    <div class="container">
         <div class="container dropDown">
 
-            <!-- Bubble Drop down menu -->
+            <!-- Drop down menu -->
         <select name="data" id="selTable" onchange="optionChanged(this.value)">
             <option selection="selected" value="2015">Select One</option>
             <option value="2015">2015 Chart</option>
@@ -43,50 +43,55 @@
           </select>
             <!-- END - Bubble Drop down menu -->
         </div>
+        <div class="row">
+        <div class="col-lg-4">
+            <table id="ufo-table" class="table table-striped">
+                 <thead>
+                    <tr>
+                        <th class="table-head">County</th>
+                        <th class="table-head">Code</th>
+                        <th class="table-head">Happiness Rank</th>
+                        <th class="table-head">Happiness Score</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
         
+        <div class="row">
         <div class="container bubble">
             <!-- Bubble Chart -->
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <div id="bubble"></div>
                 </div>
-            </div>
+            
             <!-- END - Bubble Chart -->
-        </div>
+
         
-        <!-- bar graph --> 
-        <!-- <div class="barcontainer">
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                <div id="myagg"></div>
+            <!-- bar graph --> 
+
+                <div class="col-md-6">
+                    <div id="myagg"></div>
+                </div>
+            <!-- End bar-->
             </div>
-            </div>
-        </div> -->
-        <!-- End bar-->
+        </div>
+            
 
 
 
         <div class="container">
-
-            <div class="col-lg-8 align-self-start">
-                <div id="myDiv"></div>
-            </div>
-            
-            
-                <div class="col-lg-4">
-                    <table id="ufo-table" class="table table-striped">
-                         <thead>
-                            <tr>
-                                <th class="table-head">County</th>
-                                <th class="table-head">Code</th>
-                                <th class="table-head">Happiness Rank</th>
-                                <th class="table-head">Happiness Score</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+            <div class="row">
+                <div class="col-lg-8 align-self-start">
+                    <div id="myDiv"></div>
                 </div>
+                
+            </div>
         </div>
+    </div>
+</div>
 
         <!-- Optional JavaScript; choose one of the two! -->
         <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
