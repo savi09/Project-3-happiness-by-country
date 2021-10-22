@@ -210,8 +210,6 @@ function optionChanged(yr_choice) {
             title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
             xaxis: { title: "Region", automargin: true },
             yaxis: { title: "Happiness_Score", range: [0, 22] },
-            height: 600,
-            width: 900,
             updatemenus: [
                 {
                 x: 0.85,
@@ -659,8 +657,6 @@ function initCharts() {
         title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
         xaxis: { title: "Region", automargin: true },
         yaxis: { title: "Happiness_Score", range: [0, 22] },
-        height: 600,
-        width: 900,
         updatemenus: [
             {
             x: 0.85,
