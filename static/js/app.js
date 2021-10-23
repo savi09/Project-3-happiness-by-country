@@ -123,7 +123,7 @@ function optionChanged(yr_choice) {
         var traceDataBub = [traceBubble];
         
         var bubbleLayout ={
-            title: 'Happiness Score vs Suicide Rates by Country',
+            // title: 'Happiness Score vs Suicide Rates by Country',
             xaxis: {
                 title: 'Happiness Score'},
             yaxis: {
