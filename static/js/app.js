@@ -161,7 +161,7 @@ function optionChanged(yr_choice) {
     
         sh_score.push(h_score);
         Region.push(h_Region);
-        life_exp.push(l_expec)
+        life_exp.push(l_expec*100)
         }
 
 
@@ -201,7 +201,7 @@ function optionChanged(yr_choice) {
                 y: 1.15,
                 xref: "paper",
                 yref: "paper",
-                xanchor: "right",
+                //xanchor: "right",
                 yanchor: "top",
                 active: 0,
                 showactive: false,
@@ -285,7 +285,7 @@ function optionChanged(yr_choice) {
                 y: 1.15,
                 xref: "paper",
                 yref: "paper",
-                xanchor: "right",
+                //xanchor: "right",
                 yanchor: "top",
                 active: 0,
                 showactive: false,
@@ -649,7 +649,7 @@ function initCharts() {
     
         sh_score.push(h_score);
         Region.push(h_Region);
-        life_exp.push(l_expec)
+        life_exp.push(l_expec*100)
         }
         
 
@@ -689,7 +689,7 @@ function initCharts() {
             y: 1.15,
             xref: "paper",
             yref: "paper",
-            xanchor: "right",
+            //xanchor: "right",
             yanchor: "top",
             active: 0,
             showactive: false,
@@ -784,7 +784,7 @@ function initCharts() {
                     y: 1.15,
                     xref: "paper",
                     yref: "paper",
-                    xanchor: "right",
+                    //xanchor: "right",
                     yanchor: "top",
                     active: 0,
                     showactive: false,
