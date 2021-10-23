@@ -12,7 +12,7 @@ To view the presentation, click below (This will require you to download the fil
    
  To view a .pdf version of the slides, click below:
  
-   ![Project 3- Happiness by Country.pdf](https://github.com/.pdf)
+   [Project 3- Happiness by Country.pdf](https://github.com/savi09/Project-3-happiness-by-country/blob/2f96bd05c9a4185eede7fe861e85bcd4ba25dbb6/images/Project%203-%20Happiness%20by%20Country%C2%B7%20SlidesCarnival.pdf)
 
 ## Project Description   
 Extract, transform, and load happiness and suicide data to a database.  Use Flask to utilize that database to create a dashboard visualizing certain datapoints.  
