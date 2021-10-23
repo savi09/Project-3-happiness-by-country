@@ -72,9 +72,6 @@ function optionChanged(yr_choice) {
 
         }
 
-
-        // console.log("suicide", suicide)
-
         var happy_filtered = myData.happiness.filter(x => x.year == yr_choice);
 
         var scatterData = [];
@@ -82,8 +79,6 @@ function optionChanged(yr_choice) {
     
         for (var z = 0; z < suicide.length; z++) {
             for (var t = 0; t < happy_filtered.length; t++) {
-                // console.log(suicide[z].country, suicide[z].year)
-                // console.log(happy_filtered[t].Country, happy_filtered[t].year)
                 if (suicide[z].country==happy_filtered[t].Country && suicide[z].year==happy_filtered[t].year) {
                     scatterData.push({"country": suicide[z].country,
                         "year": suicide[z].year,
@@ -95,8 +90,6 @@ function optionChanged(yr_choice) {
             }
 
         }
-
-        // console.log("scatterData", scatterData)
 
         ////////// Chart //////////
         
@@ -114,10 +107,6 @@ function optionChanged(yr_choice) {
             ssSize.push((scatterData[key1].perOne * 2));
             };
 
-            // console.log(ctry_)
-            // console.log(ss)
-            // console.log(happy_)
-
         var traceBubble = {
             x: happy_,
             y: ss,
@@ -125,7 +114,6 @@ function optionChanged(yr_choice) {
             mode: 'markers',
             marker: {
                 color: happy_,
-                // colorscale: 'Bluered',
                 colorscale: 'Portland',
                 reversescale: true,
             size: ssSize 
@@ -136,7 +124,6 @@ function optionChanged(yr_choice) {
         
         var bubbleLayout ={
             title: 'Happiness Score vs Suicide Rates by Country',
-            autosize: true,
             xaxis: {
                 title: 'Happiness Score'},
             yaxis: {
@@ -145,8 +132,6 @@ function optionChanged(yr_choice) {
         
         Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
 
-
-        
 
 
     
@@ -178,8 +163,6 @@ function optionChanged(yr_choice) {
         Region.push(h_Region);
         life_exp.push(l_expec)
         }
-        // console.log(score + " " + rank + " " + Region + " " + l_expec)
-        // console.log(score)
 
 
 
@@ -192,9 +175,9 @@ function optionChanged(yr_choice) {
             y: sh_score,
             type: "bar",
             marker: {
-            color: "rgb(158,202,225)",
+            color: "#6CC3D5",
             line: {
-                color: "rgb(8,48,107)",
+                color: "#6CC3D5",
                 width: 1.5,
             },
             },
@@ -208,10 +191,10 @@ function optionChanged(yr_choice) {
         },
         ];
         var barlayout = {
-            title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
-            autosize: true,
+            title: "Use dropdown to change aggregation",
+            // <b>Plotly Aggregations</b><br></br>
             xaxis: { title: "Region", automargin: true },
-            yaxis: { title: "Happiness_Score", range: [0, 22] },
+            yaxis: { title: "Happiness Score", range: [0, 22] },
             updatemenus: [
                 {
                 x: 0.85,
@@ -261,14 +244,12 @@ function optionChanged(yr_choice) {
     
     
         //var data = [t1,t2];
-        //Plotly.newPlot('myDiv', data, layout)
         Plotly.newPlot("myagg", bar_data, barlayout, {responsive: true});
     // });
 
 
 
     /////////////END - Bar Chart //////////////
-
     ///////////// Life Expectancy Bar Chart //////////////
 
     var bar2_data = [
@@ -277,9 +258,9 @@ function optionChanged(yr_choice) {
             y: life_exp,
             type: "bar",
             marker: {
-            color: "rgb(158,202,230)",
+            color: "#6CC3D5",
             line: {
-                color: "rgb(50,48,107)",
+                color: "#6CC3D5",
                 width: 1.5,
             },
             },
@@ -293,7 +274,8 @@ function optionChanged(yr_choice) {
         },
         ];
         var bar2layout = {
-            title: "Life Expectancy by Region",
+            // title: "Life Expectancy by Region",
+            title: "Use dropdown to change aggregation",
             xaxis: { title: "Region", automargin: true },
             yaxis: { title: "Life Expectancy"},
             updatemenus: [
@@ -342,10 +324,9 @@ function optionChanged(yr_choice) {
                 }
             ]
         };
-    
-    
+
+
         //var data = [t1,t2];
-        //Plotly.newPlot('myDiv', data, layout)
         Plotly.newPlot("mylifeagg", bar2_data, bar2layout, {responsive: true});
 
     //////////END - Life Expectancy Bar Chart ////////////
@@ -360,15 +341,11 @@ function optionChanged(yr_choice) {
             console.log(myData)
 
             if (yr_choice == "2015") {
-                // console.log("selOption")
-                // console.log(myData.happiness.length)
 
     //             var five_results = myData.happiness.filter(x => x.year == '2015');
 
                 for (var i = 0; i < myData.happiness.length; i++) {
                     if (myData.happiness[i].year == '2015') {
-                        // console.log("country")
-                        // console.log(myData.happiness[i].Country)
                         
                         var country = myData.happiness[i].Country;
                         var code = myData.happiness[i].code;
@@ -377,18 +354,13 @@ function optionChanged(yr_choice) {
 
                         rows.push({
                             "country": country,
-                            "code": code,
+                            "score": score,
                             "rank": rank,
-                            "score": score
+                            "code": code
                         });
                     }
 
-    //                 // console.log("data for each country")
-    //                 // console.log(score + " " + rank + " " + country)
                 };
-
-                // console.log("rows check")
-                // console.log(rows)
 
                 function unpack(rows, key) {
                     return rows.map(function (row) { return row[key]; });
@@ -399,12 +371,7 @@ function optionChanged(yr_choice) {
                     locations: unpack(rows, 'code'),
                     z: unpack(rows, 'score'),
                     text: unpack(rows, 'country'),
-                    // colorscale: 'Bluered',
                     colorscale: 'Portland',
-                    // [
-                    //     [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
-                    //     [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
-                    //     [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
                     autocolorscale: false,
                     reversescale: true,
                     marker: {
@@ -424,26 +391,23 @@ function optionChanged(yr_choice) {
                 }];
 
                 var layout = {
-                    title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
-                    autosize: false,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
                         projection: {
                             type: 'mercator'
-                            // type: 'robinson'
-                        }
-                    }
+                                                }
+                    },
+                    width: 800,
+                    height: 650,
                 };
-                Plotly.newPlot("myDiv", data, layout, { showLink: false }, {responsive: true});
+                fig = Plotly.newPlot("myDiv", data, layout, { showLink: false }, {responsive: true});
+
 
     
                 rows.forEach((row_data) => {
                     // Create tr for each row of the table
                     const row = tbody.append("tr");
-
-                    // console.log("row_data")
-                    // console.log(row_data)
 
                     // Create multiple td cells for each row
                     Object.values(row_data).forEach((value) => {
@@ -456,15 +420,12 @@ function optionChanged(yr_choice) {
             }
 
             else if (yr_choice == "2016") {
-                // console.log("selOption")
-                // console.log(myData.happiness.length)
+
 
             //             var five_results = myData.happiness.filter(x => x.year == '2015');
 
                 for (var i = 0; i < myData.happiness.length; i++) {
                     if (myData.happiness[i].year == '2016') {
-                        // console.log("country")
-                        // console.log(myData.happiness[i].Country)
                         
                         var country = myData.happiness[i].Country;
                         var code = myData.happiness[i].code;
@@ -473,14 +434,12 @@ function optionChanged(yr_choice) {
 
                         rows.push({
                             "country": country,
-                            "code": code,
+                            "score": score,
                             "rank": rank,
-                            "score": score
+                            "code": code
                         });
                     }
 
-            //                 // console.log("data for each country")
-            //                 // console.log(score + " " + rank + " " + country)
                 };
 
                 console.log("rows check")
@@ -495,12 +454,7 @@ function optionChanged(yr_choice) {
                     locations: unpack(rows, 'code'),
                     z: unpack(rows, 'score'),
                     text: unpack(rows, 'country'),
-                    // colorscale: 'Bluered',
                     colorscale: 'Portland',
-                    // [
-                    //     [0, 'rgb(5, 10, 172)'], [0.35, 'rgb(40, 60, 190)'],
-                    //     [0.5, 'rgb(70, 100, 245)'], [0.6, 'rgb(90, 120, 245)'],
-                    //     [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
                     autocolorscale: false,
                     reversescale: true,
                     marker: {
@@ -520,16 +474,15 @@ function optionChanged(yr_choice) {
                 }];
 
                 var layout = {
-                    title: '2016 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
-                    autosize: false,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
                         projection: {
                             type: 'mercator'
-                            // type: 'robinson'
                         }
-                    }
+                    },
+                    width: 800,
+                    height: 650
 
                 };
                 Plotly.newPlot("myDiv", data, layout, { showLink: false }, {responsive: true});
@@ -604,9 +557,6 @@ function initCharts() {
 
         }
 
-
-        // console.log("suicide", suicide)
-
         var happy_filtered = myData.happiness.filter(x => x.year == '2015');
 
         var scatterData = [];
@@ -616,8 +566,6 @@ function initCharts() {
         var sPer = 0;
         for (var z = 0; z < suicide.length; z++) {
             for (var t = 0; t < happy_filtered.length; t++) {
-                // console.log(suicide[z].country, suicide[z].year)
-                // console.log(happy_filtered[t].Country, happy_filtered[t].year)
                 if (suicide[z].country==happy_filtered[t].Country && suicide[z].year==happy_filtered[t].year) {
                     scatterData.push({"country": suicide[z].country,
                         "year": suicide[z].year,
@@ -630,7 +578,6 @@ function initCharts() {
 
         }
 
-        // console.log("scatterData", scatterData)
 
         ////////// Bubble Chart //////////
         
@@ -646,9 +593,6 @@ function initCharts() {
             ssSize.push((scatterData[key1].perOne * 2));
             };
 
-            // console.log(ctry_)
-            // console.log(ss)
-            // console.log(happy_)
 
          var traceBubble = {
             x: happy_,
@@ -657,7 +601,6 @@ function initCharts() {
             mode: 'markers',
             marker: {
                 color: happy_,
-                // colorscale: 'Bluered',
                 colorscale: 'Portland',
                 reversescale: true,
             size: ssSize 
@@ -667,8 +610,7 @@ function initCharts() {
         var traceDataBub = [traceBubble];
         
         var bubbleLayout ={
-            title: 'Happiness Score vs Suicide Rates by Country',
-            autosize: true,
+            // title: 'Happiness Score vs Suicide Rates by Country',
             xaxis: {
                 title: 'Happiness Score'},
             yaxis: {
@@ -677,7 +619,7 @@ function initCharts() {
 
         var config = {responsive: true}
         
-        Plotly.newPlot('bubble', traceDataBub, bubbleLayout, { showLink: false });
+        Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
 
         ///// END - Initial Bubble Chart ////////
 
@@ -707,9 +649,7 @@ function initCharts() {
         Region.push(h_Region);
         life_exp.push(l_expec)
         }
-        // console.log(score + " " + rank + " " + Region + " " + l_expec)
-        // console.log(score)
-
+        
 
 
         //**************************creating bar graphs trace for happiness score**************************//
@@ -721,9 +661,9 @@ function initCharts() {
             y: sh_score,
             type: "bar",
             marker: {
-            color: "rgb(158,202,225)",
+            color: "#6CC3D5",
             line: {
-                color: "rgb(8,48,107)",
+                color: "#6CC3D5",
                 width: 1.5,
             },
             },
@@ -737,10 +677,10 @@ function initCharts() {
         },
         ];
         barlayout = {
-        title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
-        autosize: true,
+        title: "Use dropdown to change aggregation",
+        // <b>Plotly Aggregations</b><br>
         xaxis: { title: "Region", automargin: true },
-        yaxis: { title: "Happiness_Score", range: [0, 22] },
+        yaxis: { title: "Happiness Score", range: [0, 22] },
         updatemenus: [
             {
             x: 0.85,
@@ -756,11 +696,6 @@ function initCharts() {
                 args: ["transforms[0].aggregations[0].func", "avg"],
                 label: "Avg",
                 },
-            //   {
-            //     method: "restyle",
-            //     args: ["transforms[0].aggregations[0].func", "sum"],
-            //     label: "Sum",
-            //   },
                 {
                 method: "restyle",
                 args: ["transforms[0].aggregations[0].func", "min"],
@@ -808,7 +743,6 @@ function initCharts() {
     
     
         //var data = [t1,t2];
-        //Plotly.newPlot('myDiv', data, layout)
         Plotly.newPlot("myagg",bar_data, barlayout);
     //});
         /////////////END - Bar Chart //////////////
@@ -821,9 +755,9 @@ function initCharts() {
                 y: life_exp,
                 type: "bar",
                 marker: {
-                color: "rgb(158,202,230)",
+                color: "#6CC3D5",
                 line: {
-                    color: "rgb(50,48,107)",
+                    color: "#6CC3D5",
                     width: 1.5,
                 },
                 },
@@ -837,7 +771,8 @@ function initCharts() {
             },
             ];
             var bar2layout = {
-                title: "Life Expectancy by Region",
+                // title: "Life Expectancy by Region",
+                title: "Use dropdown to change aggregation",
                 xaxis: { title: "Region", automargin: true },
                 yaxis: { title: "Life Expectancy"},
                 updatemenus: [
@@ -889,18 +824,17 @@ function initCharts() {
         
         
             //var data = [t1,t2];
-            //Plotly.newPlot('myDiv', data, layout)
             Plotly.newPlot("mylifeagg", bar2_data, bar2layout, {responsive: true});
 
         //////////END - Initial Life Expectancy Bar Chart ////////////
+
+
 
         ///// Initial Map Chart ////////
 
         for (var i = 0; i < myData.happiness.length; i++) {
             if (myData.happiness[i].year == '2015') {
-                // console.log("country")
-                // console.log(myData.happiness[i].Country)
-                
+                                
                 var country = myData.happiness[i].Country;
                 var code = myData.happiness[i].code;
                 var rank = myData.happiness[i].happiness_rank;
@@ -908,18 +842,13 @@ function initCharts() {
 
                 rows.push({
                     "country": country,
-                    "code": code,
+                    "score": score,
                     "rank": rank,
-                    "score": score
+                    "code": code
                 });
             }
 
-//                 // console.log("data for each country")
-//                 // console.log(score + " " + rank + " " + country)
         };
-
-        // console.log("rows check")
-        // console.log(rows)
 
         function unpack(rows, key) {
             return rows.map(function (row) { return row[key]; });
@@ -930,14 +859,10 @@ function initCharts() {
             locations: unpack(rows, 'code'),
             z: unpack(rows, 'score'),
             text: unpack(rows, 'country'),
-            // colorscale: 'Bluered',
             colorscale: 'Portland',
-                // [0, 'rgb(13, 110, 253)'], [0.35, 'rgb(102, 16, 242)'],
-                // [0.5, 'rgb(111, 66, 193)'], [0.6, 'rgb(90, 120, 245)'],
-                // [0.7, 'rgb(106, 137, 247)'], [1, 'rgb(220, 220, 220)']],
             autocolorscale: false,
-            reversescale: true
-            ,marker: {
+            reversescale: true,
+            marker: {
                 line: {
                     color: 'rgb(180,180,180)',
                     width: 0.5
@@ -954,16 +879,16 @@ function initCharts() {
         }];
 
         var layout = {
-            title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"> </a>',
-            autosize: false,
+            // title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"></a>',
             geo: {
                 showframe: false,
                 showcoastlines: false,
                 projection: {
                     type: 'mercator'
-                    // type: 'robinson'
                 }
-            }
+            },
+            width: 800,
+            height: 650
         };
         Plotly.newPlot("myDiv", data, layout, {showLink: false}, {responsive: true});
 
@@ -971,9 +896,6 @@ function initCharts() {
         rows.forEach((row_data) => {
             // Create tr for each row of the table
             const row = tbody.append("tr");
-
-            // console.log("row_data")
-            // console.log(row_data)
 
             // Create multiple td cells for each row
             Object.values(row_data).forEach((value) => {
@@ -985,9 +907,6 @@ function initCharts() {
         });
 
         ///// END - Initial Map Chart ////////
-
-
-        
 
 
     });
