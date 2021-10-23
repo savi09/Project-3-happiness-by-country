@@ -194,7 +194,7 @@ function optionChanged(yr_choice) {
             title: "Use dropdown to change aggregation",
             // <b>Plotly Aggregations</b><br></br>
             xaxis: { title: "Region", automargin: true },
-            yaxis: { title: "Happiness Score", range: [0, 22] },
+            yaxis: { title: "Happiness Score", range: [0, 10]},
             updatemenus: [
                 {
                 x: 0.85,
@@ -278,7 +278,7 @@ function optionChanged(yr_choice) {
             // title: "Life Expectancy by Region",
             title: "Use dropdown to change aggregation",
             xaxis: { title: "Region", automargin: true },
-            yaxis: { title: "Life Expectancy"},
+            yaxis: { title: "Life Expectancy", range: [0, 120]},
             updatemenus: [
                 {
                 x: 0.85,
@@ -682,7 +682,7 @@ function initCharts() {
         title: "Use dropdown to change aggregation",
         // <b>Plotly Aggregations</b><br>
         xaxis: { title: "Region", automargin: true },
-        yaxis: { title: "Happiness Score", range: [0, 22] },
+        yaxis: { title: "Happiness Score", range: [0, 10]},
         updatemenus: [
             {
             x: 0.85,
@@ -777,7 +777,7 @@ function initCharts() {
                 // title: "Life Expectancy by Region",
                 title: "Use dropdown to change aggregation",
                 xaxis: { title: "Region", automargin: true },
-                yaxis: { title: "Life Expectancy"},
+                yaxis: { title: "Life Expectancy", range: [0, 120] },
                 updatemenus: [
                     {
                     x: 0.85,
