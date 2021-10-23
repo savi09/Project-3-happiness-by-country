@@ -78,25 +78,23 @@ We were curious to see:
 Plotting the happiness score by rank on a map of countries, you can see minor differences when you toggle between the two years available from the drop down.  When you hover over each country you can see the country, happiness score as well as the country code.  This data is also what fills in the table that displays the countries in order by rank.  Again, there were only minor differences in the rank between the two years analyzed.    
 
 ###### Figure: World Map of Happiness Score 2015
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Higher_paying_jobs_heatmap.png)
+![World Map of Happiness Score 2015](images/World Happiness Map- 2015.png)
 
 ###### Figure: World Map of Happiness Score 2016
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Higher_paying_jobs_heatmap.png)
+![World Map of Happiness Score 2016](images/World Happiness Map- 2016.png)
 
 ## Happiness by Region Bar Chart
 Based on the averages of happiness score by Region, Western Europe, North America, Australia and New Zealand have the highest happiness score.
 
 ###### Figure: Happiness by Region Bar Chart
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Company_Rating_by_Job_Types.png)
+![alt text](images/Happiness by Region Bar Chart.png)
 
 ## Life Expectancy by Region Bar Chart
 Based on the averages of life expecctancy by Region, Western Europe, North America, Australia and New Zealand have the highest life expectancy.
 
-
-
-
 ###### Figure: Life Expectancy by Region Bar Chart
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Company_Rating_by_Job_Types.png)
+![alt text](images/Life Expectancy by Region Bar Chart.png) 
+![alt text](https://github.com/savi09/Project-3-happiness-by-country/blob/8a8cc156435a5cd24ba11762fc8037c9c2c8b453/images/Life%20Expectancy%20by%20Region%20Bar%20Chart.png)
 
 ## Happiness Scores vs Suicide Rates by Country
 Finally, we decided to compare happiness scores with suicide rates. We were hoping to find a correlation between these two datapoints. Unfortunately, we did not find such correlation. As you can see in the charts below, there are some countries who have one of the lowest happiness scores, but they also have one of the lowest suicide scores. Also, for example Lithuania has an average happiness score, but has the highest suicide rates. 
@@ -104,11 +102,12 @@ Finally, we decided to compare happiness scores with suicide rates. We were hopi
 When comparing 2015 and 2016 in the dashboard, you can see that the countries stayed in the relatively same position of happiness score and suicide rates. Although the 2016 chart has much less data, by hovering over the bubble to find the country name, happiness score, and suicide rate then comparing to 2015 you can see they are very similar. This can, also, be seen easily by the size (coincides with suicide rates) and the color of the bubble(coincides with the happiness score).
 
 ###### Figure: Happiness Scores vs Suicide Rates by Country- 2015
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Company_Rating_by_Job_Types.png)
+![alt text](images/Happiness Score vrs Suicide Bubble- 2015.png)
+![alt text](https://github.com/savi09/Project-3-happiness-by-country/blob/8a8cc156435a5cd24ba11762fc8037c9c2c8b453/images/Happiness%20Score%20vrs%20Suicide%20Bubble-%202015.png)
 
 ###### Figure: Happiness Scores vs Suicide Rates by Country- 2016
-![alt text](https://github.com/jennifermarie6sl/Project-1/blob/ed5a47a655b497b329e1e2adb06faf46f621032b/Presentation_Charts/Company_Rating_by_Job_Types.png)
-
+![alt text](images/Happiness Score vrs Suicide Bubble- 2016.png)
+![alt text](https://github.com/savi09/Project-3-happiness-by-country/blob/8a8cc156435a5cd24ba11762fc8037c9c2c8b453/images/Happiness%20Score%20vrs%20Suicide%20Bubble-%202016.png)
 
 # Sources
 * Power point images: All images in out presentation came from the Powerpoint Design Tool or Online Pictures Tool. Except, the ones we created. 
