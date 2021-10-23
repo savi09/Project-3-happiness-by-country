@@ -136,6 +136,7 @@ function optionChanged(yr_choice) {
         
         var bubbleLayout ={
             title: 'Happiness Score vs Suicide Rates by Country',
+            autosize: true,
             xaxis: {
                 title: 'Happiness Score'},
             yaxis: {
@@ -208,6 +209,7 @@ function optionChanged(yr_choice) {
         ];
         var barlayout = {
             title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
+            autosize: true,
             xaxis: { title: "Region", automargin: true },
             yaxis: { title: "Happiness_Score", range: [0, 22] },
             updatemenus: [
@@ -267,6 +269,86 @@ function optionChanged(yr_choice) {
 
     /////////////END - Bar Chart //////////////
 
+    ///////////// Life Expectancy Bar Chart //////////////
+
+    var bar2_data = [
+        {
+            x: Region,
+            y: life_exp,
+            type: "bar",
+            marker: {
+            color: "rgb(158,202,230)",
+            line: {
+                color: "rgb(50,48,107)",
+                width: 1.5,
+            },
+            },
+            transforms: [
+            {
+                type: "aggregate",
+                groups: Region,
+                aggregations: [{ target: "y", func: "avg", enabled: true }],
+            },
+            ],
+        },
+        ];
+        var bar2layout = {
+            title: "Life Expectancy by Region",
+            xaxis: { title: "Region", automargin: true },
+            yaxis: { title: "Life Expectancy"},
+            updatemenus: [
+                {
+                x: 0.85,
+                y: 1.15,
+                xref: "paper",
+                yref: "paper",
+                yanchor: "top",
+                active: 0,
+                showactive: false,
+                buttons: [
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "avg"],
+                    label: "Avg",
+                    },
+
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "min"],
+                    label: "Min",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "max"],
+                    label: "Max",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "mode"],
+                    label: "Mode",
+                    },
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "median"],
+                    label: "Median",
+                    },
+
+                    {
+                    method: "restyle",
+                    args: ["transforms[0].aggregations[0].func", "stddev"],
+                    label: "Std.Dev",
+                    },
+                ]
+                }
+            ]
+        };
+    
+    
+        //var data = [t1,t2];
+        //Plotly.newPlot('myDiv', data, layout)
+        Plotly.newPlot("mylifeagg", bar2_data, bar2layout, {responsive: true});
+
+    //////////END - Life Expectancy Bar Chart ////////////
 
     ///////////// Map Chart //////////////
 
@@ -343,7 +425,7 @@ function optionChanged(yr_choice) {
 
                 var layout = {
                     title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
-                    autosize: true,
+                    autosize: false,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
@@ -439,7 +521,7 @@ function optionChanged(yr_choice) {
 
                 var layout = {
                     title: '2016 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html">Team 1 </a>',
-                    autosize: true,
+                    autosize: false,
                     geo: {
                         showframe: false,
                         showcoastlines: false,
@@ -586,6 +668,7 @@ function initCharts() {
         
         var bubbleLayout ={
             title: 'Happiness Score vs Suicide Rates by Country',
+            autosize: true,
             xaxis: {
                 title: 'Happiness Score'},
             yaxis: {
@@ -655,6 +738,7 @@ function initCharts() {
         ];
         barlayout = {
         title: "<b>Plotly Aggregations</b><br>use dropdown to change aggregation",
+        autosize: true,
         xaxis: { title: "Region", automargin: true },
         yaxis: { title: "Happiness_Score", range: [0, 22] },
         updatemenus: [
@@ -729,6 +813,87 @@ function initCharts() {
     //});
         /////////////END - Bar Chart //////////////
 
+        /////////////Initial Life Expectancy Bar Chart //////////////
+
+        var bar2_data = [
+            {
+                x: Region,
+                y: life_exp,
+                type: "bar",
+                marker: {
+                color: "rgb(158,202,230)",
+                line: {
+                    color: "rgb(50,48,107)",
+                    width: 1.5,
+                },
+                },
+                transforms: [
+                {
+                    type: "aggregate",
+                    groups: Region,
+                    aggregations: [{ target: "y", func: "avg", enabled: true }],
+                },
+                ],
+            },
+            ];
+            var bar2layout = {
+                title: "Life Expectancy by Region",
+                xaxis: { title: "Region", automargin: true },
+                yaxis: { title: "Life Expectancy"},
+                updatemenus: [
+                    {
+                    x: 0.85,
+                    y: 1.15,
+                    xref: "paper",
+                    yref: "paper",
+                    yanchor: "top",
+                    active: 0,
+                    showactive: false,
+                    buttons: [
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "avg"],
+                        label: "Avg",
+                        },
+    
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "min"],
+                        label: "Min",
+                        },
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "max"],
+                        label: "Max",
+                        },
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "mode"],
+                        label: "Mode",
+                        },
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "median"],
+                        label: "Median",
+                        },
+    
+                        {
+                        method: "restyle",
+                        args: ["transforms[0].aggregations[0].func", "stddev"],
+                        label: "Std.Dev",
+                        },
+                    ]
+                    }
+                ]
+            };
+        
+        
+            //var data = [t1,t2];
+            //Plotly.newPlot('myDiv', data, layout)
+            Plotly.newPlot("mylifeagg", bar2_data, bar2layout, {responsive: true});
+
+        //////////END - Initial Life Expectancy Bar Chart ////////////
+
         ///// Initial Map Chart ////////
 
         for (var i = 0; i < myData.happiness.length; i++) {
@@ -790,7 +955,7 @@ function initCharts() {
 
         var layout = {
             title: '2015 World Happiness Map<br><a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"> </a>',
-            autosize: true,
+            autosize: false,
             geo: {
                 showframe: false,
                 showcoastlines: false,
